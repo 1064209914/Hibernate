@@ -1,6 +1,5 @@
 package com.hxd.test;
 
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -21,18 +20,19 @@ public class UserTest {
 	public void init(){
 		sessionFactory=new Configuration().configure().buildSessionFactory();
 		session=sessionFactory.openSession();
-		transaction=session.beginTransaction();
+		transaction =session.beginTransaction();
 	}
 
 	@After
 	public void destroy(){
 		transaction.commit();
-		 session.close();
-			sessionFactory.close();
+		session.close();
+		sessionFactory.close();
 	}		
 	@Test
 	public void test(){
-		 session.save(new User(25L, "25", "25"));
+		User user =new User(25L, "zhangsan", "lisi");
+		session.save(user);
 	
 		
 	}
