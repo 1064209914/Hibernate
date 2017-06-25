@@ -13,9 +13,10 @@
   	<property name="show_sql">true</property>
   	<property name="format_sql">true</property>	<!-- 是否格式化语句 -->
   	
-  	<property name="hbm2ddl.auto">update</property>
+  	<property name="hbm2ddl.auto">create</property>
   	
   	<mapping resource="com/hxd/hibernate/bean/User.hbm.xml" />
-  	
+  	<mapping class="com.hxd.hibernate.list.Person" />
+  	<mapping class="com.hxd.hibernate.list.PersonSet" />
     </session-factory>
 </hibernate-configuration>
